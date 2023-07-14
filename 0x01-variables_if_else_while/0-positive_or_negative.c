@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 
-/**
+/*
  * main - Entry point
  *
  * Description: This program assigns a random number to the variable 'n'
