@@ -3,29 +3,29 @@
 
 /**
  * print_fibonacci - Prints the first 98 Fibonacci numbers
- * The Fibonacci sequence is 1 and 2 only
+ * The Fibonacci sequence starts with 1 and 2 only
  * The function prints the numbers in the
  * sequence, separated by commas and spaces, and followed by a new line.
  */
 void print_fibonacci(void)
 {
-unsigned long int a, b, c;
-int count;
+	unsigned long long int a, b, c;
+	int count;
 
-a = 1;
-b = 2;
+	a = 1;
+	b = 2;
 
-printf("%lu, %lu", a, b);
+	printf("%llu, %llu", a, b);
 
-for (count = 2; count < 98; count++)
-{
-c = a + b;
-printf(", %lu", c);
-a = b;
-b = c;
-}
+	for (count = 2; count < 98; count++)
+	{
+		c = a + b;
+		printf(", %llu", c);
+		a = b;
+		b = c;
+	}
 
-printf("\n");
+	printf("\n");
 }
 
 /**
@@ -36,6 +36,7 @@ printf("\n");
  */
 int main(void)
 {
-print_fibonacci();
-return (0);
+	print_fibonacci();
+	return (0);
+}
 }
