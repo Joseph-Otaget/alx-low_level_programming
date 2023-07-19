@@ -9,23 +9,27 @@
  */
 void print_fibonacci(void)
 {
-	unsigned long int a, b, c;
-	int count;
+    unsigned long int a, b, c;
+    int count;
+    int n = 98; // Number of Fibonacci numbers to print
 
-	a = 1;
-	b = 2;
+    a = 1;
+    b = 2;
 
-	printf("%lu", a);
+    if (n >= 1)
+    {
+        printf("%lu", a);
 
-	for (count = 1; count < 98; count++)
-	{
-		printf(", %lu", b);
-		c = a + b;
-		a = b;
-		b = c;
-	}
+        for (count = 1; count < n; count++)
+        {
+            printf(", %lu", b);
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
 
-	printf("\n");
+    printf("\n");
 }
 
 /**
@@ -36,6 +40,6 @@ void print_fibonacci(void)
  */
 int main(void)
 {
-	print_fibonacci();
-	return (0);
+    print_fibonacci();
+    return (0);
 }
