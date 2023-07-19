@@ -1,45 +1,49 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * print_fibonacci - Prints the first 98 Fibonacci numbers
- * The Fibonacci sequence starts with 1 and 2 only
- * The function prints the numbers in the
- * sequence, separated by commas and spaces, and followed by a new line.
- */
-void print_fibonacci(void)
-{
-    unsigned long int a, b, c;
-    int count;
-    int n = 98; // Number of Fibonacci numbers to print
-
-    a = 1;
-    b = 2;
-
-    if (n >= 1)
-    {
-        printf("%lu", a);
-
-        for (count = 1; count < n; count++)
-        {
-            printf(", %lu", b);
-            c = a + b;
-            a = b;
-            b = c;
-        }
-    }
-
-    printf("\n");
-}
-
-/**
- * main - Entry point of the program.
- * Calls the print_fibonacci function to print the first 98 Fibonacci numbers.
+ * main - fibonacci <3
  *
- * Return: Always 0 to indicate successful execution of the program.
+ * Purpose - Print the first 98 Fibonacci numbers
+ * without hardcoding any values
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-    print_fibonacci();
-    return (0);
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
+
+	printf("%lu", bef);
+
+	for (i = 1; i < 91; i++)
+	{
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
+	}
+
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
+
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%09lu", aft2 % l); // Pad the number with leading zeros
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
+	}
+
+	printf("\n");
+	return (0);
 }
