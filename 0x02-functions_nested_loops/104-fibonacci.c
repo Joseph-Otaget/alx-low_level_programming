@@ -9,18 +9,18 @@
  */
 void print_fibonacci(void)
 {
-	unsigned long long int a, b, c;
+	unsigned long int a, b, c;
 	int count;
 
 	a = 1;
 	b = 2;
 
-	printf("%llu, %llu", a, b);
+	printf("%lu", a);
 
-	for (count = 2; count < 98; count++)
+	for (count = 1; count < 98; count++)
 	{
+		printf(", %lu", b);
 		c = a + b;
-		printf(", %llu", c);
 		a = b;
 		b = c;
 	}
